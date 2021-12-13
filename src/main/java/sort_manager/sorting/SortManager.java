@@ -1,18 +1,15 @@
 package sort_manager.sorting;
 
-import sort_manager.sorting.subsorters.BinarySort;
-import sort_manager.sorting.subsorters.BubbleSort;
-
-import java.time.LocalDateTime;
-
 public class SortManager {
     private String algorithm;
     private int[] unsortedArray;
     private long timeInNanoSecs;
+    private Sorter sorter;
 
     public SortManager(String algorithm, int[] unsortedArray) {
         this.algorithm = algorithm;
         this.unsortedArray = unsortedArray;
+        sorter = SorterFactory.getSorter(algorithm, unsortedArray);
 
     }
 
@@ -32,7 +29,7 @@ public class SortManager {
     public int[] sort(int[] unsortedArray, String algorithm){
         int[] sortedArray = new int[unsortedArray.length];
 
-//                Sorter sorter = new Sorter(algorithm);
+
     return null;
     }
 }
