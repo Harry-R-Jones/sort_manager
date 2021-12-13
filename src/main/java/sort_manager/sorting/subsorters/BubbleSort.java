@@ -3,13 +3,16 @@ package sort_manager.sorting.subsorters;
 import sort_manager.sorting.Sorter;
 
 public class BubbleSort extends Sorter {
+    private int[] unsortedInts;
 
+    public BubbleSort(int[] unsortedInts){
+        this.unsortedInts = unsortedInts;
+    }
     /**
      * method to sort an unordered array of ints
-     * @param unsortedInts the ints to be sorted
      * @return int[] the sorted array of ints
      */
-    public int[] sort(int[] unsortedInts) {
+    public int[] sort() {
 
         //Assume the array begins unsorted
         boolean sorted = false;

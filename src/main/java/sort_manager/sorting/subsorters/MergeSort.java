@@ -5,15 +5,19 @@ import sort_manager.sorting.Sorter;
 import java.util.Arrays;
 
 public class MergeSort extends Sorter {
+    private int[] unsortedInts;
+
+    public MergeSort(int[] unsortedInts){
+        this.unsortedInts = unsortedInts;
+    }
 
     /**
      * Method to sort using the inbuilt mergeSort algorithm
-     * @param unsortedArray the array to be sorted
      * @return int[] the sorted array
      */
-    public int[] sort(int[] unsortedArray) {
+    public int[] sort() {
 
-        Arrays.sort(unsortedArray);
-        return unsortedArray;
+        Arrays.sort(unsortedInts);
+        return unsortedInts;
     }
 }
