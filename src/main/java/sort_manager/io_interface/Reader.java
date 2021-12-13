@@ -11,10 +11,6 @@ public class Reader {
 
     public String getAlgorithm(){
         String inputString = scan.next();
-        return checkValid(inputString);
-    }
-
-    private String checkValid(String inputString) {
         if(isValid(inputString)){
             return inputString;
         } else {
