@@ -1,11 +1,11 @@
-#The Sort Manager
+# The Sort Manager
 
-##Table of Contents
+## Table of Contents
 
 *[Initial Specification](Initial-Specification)
 
 
-##Initial Specification
+## Initial Specification
 
 You will be building a program that will allow a user to sort a randomised array. The general flow of the application is:
 1. The user is presented with a number of sort algorithms to choose from
