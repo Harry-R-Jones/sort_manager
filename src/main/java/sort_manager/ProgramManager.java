@@ -5,27 +5,21 @@ import sort_manager.sorting.SortManager;
 
 public class ProgramManager {
     IOManager ioManager;
+
     public ProgramManager(){
         ioManager = new IOManager();
     }
 
     public void run(){
-        String algorithm = getAlgorithm();
-        int arraySize = getNumber();
+        String algorithm;
 
+        do {
+            algorithm = ioManager.getAlgorithm();
+        } while(algorithm.equals("Invalid"));
+
+        int arraySize = ioManager.getNumber();
 
         SortManager sortManager = new SortManager(algorithm, RandomArrayGenerator.generate(arraySize));
         sortManager.timedSort();
     }
-
-    public String getAlgorithm(){
-        ioManager.getWriter().askAlgorithm();
-        return ioManager.getReader().getAlgorithm();
-    }
-
-    public int getNumber(){
-        ioManager.getWriter().askNumber();
-        return ioManager.getReader().getNumber();
-    }
-
 }
