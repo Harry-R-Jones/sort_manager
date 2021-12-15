@@ -43,4 +43,13 @@ public class IOManager {
         writer.askAlgorithm();
         return reader.getAlgorithm();
     }
+
+    public void writeArray(int[] array){
+        writer.printArray(array);
+    }
+
+    public void printOutputs( int[] sortedArray, String algorithm, long time) {
+        writer.printDescription(algorithm, time);
+        writer.printArray(sortedArray);
+    }
 }
