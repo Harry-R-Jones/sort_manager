@@ -1,7 +1,6 @@
 package sort_manager.sorting.subsorters;
 
 import org.junit.jupiter.api.*;
-import sort_manager.sorting.subsorters.binarysort.MergeSort;
 
 public class MergeSortTest {
     int[] unsorted;

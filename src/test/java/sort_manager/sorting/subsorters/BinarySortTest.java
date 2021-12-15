@@ -1,12 +1,12 @@
 package sort_manager.sorting.subsorters;
 
 import org.junit.jupiter.api.*;
-import sort_manager.sorting.subsorters.binarysort.MergeSort;
+import sort_manager.sorting.subsorters.binarysort.BinarySort;
 
 public class BinarySortTest {
     int[] unsorted;
     int[] sorted;
-    MergeSort binarySort;
+    BinarySort binarySort;
 
     @BeforeAll
     static void setupAll(TestInfo testinfo){
@@ -19,7 +19,7 @@ public class BinarySortTest {
         unsorted = new int[]{12, 78, 21, -1000, 9};
         sorted= new int[]{-1000, 9, 12, 21, 78};
 
-        binarySort = new MergeSort(unsorted);
+        binarySort = new BinarySort(unsorted);
         System.out.println(testInfo.getDisplayName() + " - is being tested");
 
     }

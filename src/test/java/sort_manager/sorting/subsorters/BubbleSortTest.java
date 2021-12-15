@@ -1,12 +1,11 @@
 package sort_manager.sorting.subsorters;
 
 import org.junit.jupiter.api.*;
-import sort_manager.sorting.subsorters.binarysort.MergeSort;
 
 public class BubbleSortTest {
     int[] unsorted;
     int[] sorted;
-    MergeSort bubbleSort;
+    BubbleSort bubbleSort;
 
     @BeforeAll
     static void setupAll(TestInfo testinfo){
@@ -19,7 +18,7 @@ public class BubbleSortTest {
         unsorted = new int[]{12, 78, 21, -1000, 9};
         sorted= new int[]{-1000, 9, 12, 21, 78};
 
-        bubbleSort = new MergeSort(unsorted);
+        bubbleSort = new BubbleSort(unsorted);
         System.out.println(testInfo.getDisplayName() + " - is being tested");
 
     }
