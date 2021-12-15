@@ -44,10 +44,20 @@ public class IOManager {
         return reader.getAlgorithm();
     }
 
+    /**
+     * Method to print an array
+     * @param array the array to print
+     */
     public void writeArray(int[] array){
         writer.printArray(array);
     }
 
+    /**
+     * Method to print the sorted list, sorting algorithm and the time it took
+     * @param sortedArray the now sorted array
+     * @param algorithm the sorting algorithm we used
+     * @param time the time taken in nanoseconds
+     */
     public void printOutputs( int[] sortedArray, String algorithm, long time) {
         writer.printDescription(algorithm, time);
         writer.printArray(sortedArray);

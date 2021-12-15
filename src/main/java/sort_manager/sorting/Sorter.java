@@ -1,7 +1,7 @@
 package sort_manager.sorting;
 
-public abstract class Sorter {
+public interface Sorter {
 
-    public abstract int[] sort();
+    int[] sort();
 
 }

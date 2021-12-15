@@ -2,12 +2,13 @@ package sort_manager.sorting.subsorters;
 
 import sort_manager.sorting.Sorter;
 
-public class BubbleSort extends Sorter {
+public class BubbleSort implements Sorter {
     private int[] unsortedInts;
 
     public BubbleSort(int[] unsortedInts){
         this.unsortedInts = unsortedInts;
     }
+
     /**
      * method to sort an unordered array of ints
      * @return int[] the sorted array of ints
@@ -19,19 +20,23 @@ public class BubbleSort extends Sorter {
 
         //until sorted
         while (!sorted) {
-
-            //No changes have been made on this pass
-            boolean changes = false;
-
             //Make a pass
-            sorted = sortLoopOnce(unsortedInts, sorted, changes);
+            sorted = sortLoopOnce(unsortedInts);
         }
 
         //return the sorted array
         return unsortedInts;
     }
 
-    private boolean sortLoopOnce(int[] unsortedInts, boolean sorted, boolean changes) {
+    /**
+     * Method to handle a single loop through the list
+     * @param unsortedInts the list of unsorted elements
+     * @return boolean whether the list is now sorted
+     */
+    private boolean sortLoopOnce(int[] unsortedInts) {
+        //No changes have been made on this pass
+        boolean changes = false;
+
         //Walk through the array
         for (int j = 0; j < unsortedInts.length - 1; j++) {
             //compare with next integer
@@ -50,10 +55,7 @@ public class BubbleSort extends Sorter {
         }
 
         //if no changes were made to the array on this pass
-        if (!changes) {
-            //The array has been sorted
-            sorted = true;
-        }
-        return sorted;
+        //The array has been sorted
+        return !changes;
     }
 }

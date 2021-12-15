@@ -4,7 +4,7 @@ import sort_manager.sorting.Sorter;
 
 import java.util.Arrays;
 
-public class MergeSort extends Sorter {
+public class MergeSort implements Sorter {
     private int[] unsortedInts;
 
     public MergeSort(int[] unsortedInts){
@@ -16,7 +16,6 @@ public class MergeSort extends Sorter {
      * @return int[] the sorted array
      */
     public int[] sort() {
-
         Arrays.sort(unsortedInts);
         return unsortedInts;
     }

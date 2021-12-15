@@ -7,14 +7,20 @@ public class SortManager {
     private long timeInNanoSecs;
     private Sorter sorter;
 
+    //Constructor for SortManager
     public SortManager(String algorithm, int[] unsortedArray) {
         this.algorithm = algorithm;
         this.unsortedArray = unsortedArray;
         this.sortedArray = null;
+
+        //Factory pattern from sorter
         sorter = SorterFactory.getSorter(algorithm, unsortedArray);
 
     }
 
+    /**
+     * Method to sort the unsorted array (stored as variable) and time how long it took
+     */
     public void timedSort(){
 
         Long startTime = System.nanoTime();
@@ -25,6 +31,8 @@ public class SortManager {
 
         timeInNanoSecs = endTime - startTime;
     }
+
+    //Getters and Setters
 
     public long getTime() {
         return timeInNanoSecs;
