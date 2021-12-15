@@ -1,5 +1,7 @@
 package sort_manager.io_interface;
 
+import java.util.Arrays;
+
 public class Writer {
     /**
      * Method to ask the user to pick a sorting algorithm
@@ -18,5 +20,13 @@ public class Writer {
      */
     public void askNumber(){
         System.out.println("Enter how many numbers you would like in the array. Type your answer as a numerical whole number (E.G 400)");
+    }
+
+    public void printArray(int[] array) {
+        System.out.println(Arrays.toString(array));
+    }
+
+    public void printDescription(String algorithm, long time) {
+        System.out.println("Was sorted using " + algorithm + " in " + time + " nanoseconds to give: ");
     }
 }
