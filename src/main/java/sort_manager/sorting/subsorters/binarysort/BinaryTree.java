@@ -160,10 +160,10 @@ public class BinaryTree implements BinaryTreeI{
 
         //Concatenate the right child's order on the end of that to get a complete order
         if(!node.isRightChildEmpty()) {
-            orderedInts = ArrayMerge.mergeTwoArrays(tempArrayHolder, getSortedTreeAsc(node.getRightChild()));
+            tempArrayHolder = ArrayMerge.mergeTwoArrays(tempArrayHolder, getSortedTreeAsc(node.getRightChild()));
         }
 
-        return orderedInts;
+        return tempArrayHolder;
     }
 
     /**
