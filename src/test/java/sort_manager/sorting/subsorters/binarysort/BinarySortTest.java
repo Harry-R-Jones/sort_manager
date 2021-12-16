@@ -1,4 +1,4 @@
-package sort_manager.sorting.subsorters;
+package sort_manager.sorting.subsorters.binarysort;
 
 import org.junit.jupiter.api.*;
 import sort_manager.sorting.subsorters.binarysort.BinarySort;
