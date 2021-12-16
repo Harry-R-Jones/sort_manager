@@ -1,5 +1,9 @@
 package sort_manager.sorting;
 
+import sort_manager.MyLogger;
+
+import java.util.logging.Level;
+
 public class SortManager {
     private String algorithm;
     private int[] unsortedArray;
@@ -23,11 +27,13 @@ public class SortManager {
      */
     public void timedSort(){
 
+        MyLogger.log(Level.INFO, "Starting Timer");
         Long startTime = System.nanoTime();
 
         setSortedArray(sorter.sort());
 
         Long endTime = System.nanoTime();
+        MyLogger.log(Level.INFO, "Stopped Timer");
 
         timeInNanoSecs = endTime - startTime;
     }
