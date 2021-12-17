@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.logging.Level;
 
 public class GUI implements ActionListener {
+
     //The buttongroup for selecting which algorithm to use
     ButtonGroup algorithmButtons;
     JRadioButton radioButtonBinary = new JRadioButton();
@@ -110,11 +111,30 @@ public class GUI implements ActionListener {
         }
 
         //When arraysize is a possible value (positive integer)
-        if(arraySize > 0) {
+        if(arraySize > 0 && aButtonChecked()) {
             //Make the array and sort
             resolveAlgorithm(arraySize);
         }
 
+    }
+
+    private boolean aButtonChecked() {
+        boolean buttonChecked = false;
+        if(algorithmButtons.isSelected(radioButtonBinary.getModel())) {
+            buttonChecked = true;
+        }
+        if(algorithmButtons.isSelected(radioButtonBubble.getModel())) {
+            buttonChecked = true;
+        }
+        if(algorithmButtons.isSelected(radioButtonMerge.getModel())) {
+            buttonChecked = true;
+        }
+
+        if(!buttonChecked) {
+            JOptionPane.showMessageDialog(frame, "You must select an algorithm to use :(");
+        }
+
+        return buttonChecked;
     }
 
     /**
