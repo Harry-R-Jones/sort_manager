@@ -2,6 +2,8 @@ package sort_manager.sorting.subsorters;
 
 import org.junit.jupiter.api.*;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 public class BubbleSortTest {
     int[] unsorted;
     int[] sorted;
@@ -28,4 +30,5 @@ public class BubbleSortTest {
     void testArrayGetsSorted() {
         Assertions.assertArrayEquals(sorted, bubbleSort.sort());
     }
+
 }

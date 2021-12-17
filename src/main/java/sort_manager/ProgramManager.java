@@ -3,6 +3,8 @@ package sort_manager;
 import sort_manager.io_interface.IOManager;
 import sort_manager.sorting.SortManager;
 
+import java.util.logging.Level;
+
 public class ProgramManager {
     IOManager ioManager;
     SortManager sortManager;
@@ -11,9 +13,11 @@ public class ProgramManager {
     public ProgramManager(){
         //Create ioManager to handle reading and writing
         ioManager = new IOManager();
+        MyLogger.log(Level.INFO, "IOManager Created");
 
         //Create sortManager to handle sorting
         sortManager = createSortManager();
+        MyLogger.log(Level.INFO, "sortManager Created");
     }
 
     /**
