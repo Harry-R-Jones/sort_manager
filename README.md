@@ -2,9 +2,28 @@
 
 ## Table of Contents
 
-* [Initial Specification](Initial-Specification)
-* [Algorithms](algorithms)
+* Program Description
+* User Manual
+* Initial Specification
+* Algorithms
 
+## Program Description
+
+A program to generate an array of random integers of a size specified by the user. 
+The array will then be sorted according to which algorithm the user chooses from a
+list. The program will then output the unsorted and sorted versions of the array,
+as well as the time it took to sort their array in nanoseconds.
+
+## User Manual
+Upon running the program, the user will be presented with an interface. At the top
+there will be a text field containing "How many ints?". In this field the user should
+input the size of the array they wish to generate. There are radio buttons with the names
+of the available sorting algorithms. The user should click which algorithm they wish to use
+(can only click one). The user should then click the button labelled "Generate and sort".
+
+Below this, there are two text areas and a label. Upon clicking the button, the top area
+will be filled with the unsorted array, and the lower text area will hold the sorted version.
+Between these, the user will see a label that tells them how long the sorting took.
 
 ## Initial Specification
 
