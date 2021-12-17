@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
+import java.util.logging.Level;
 
 public class GUI implements ActionListener {
     ButtonGroup algorithmButtons;
@@ -58,6 +59,8 @@ public class GUI implements ActionListener {
         frame.setTitle("Sortatron 5000");
         frame.pack();
         frame.setVisible(true);
+
+        MyLogger.log(Level.FINE,"GUI Loaded");
     }
 
     private ButtonGroup getButtons() {
@@ -85,15 +88,23 @@ public class GUI implements ActionListener {
             JOptionPane.showMessageDialog(frame, "You must input an integer :(");
         }
 
+        resolveAlgorithm(arraySize);
+
+    }
+
+    private void resolveAlgorithm(int arraySize) {
         if(arraySize > 0) {
             random = RandomArrayGenerator.generate(arraySize);
 
             if (algorithmButtons.isSelected(radioButtonBinary.getModel())) {
                 sortManager = new SortManager("Binary", random);
+                MyLogger.log(Level.FINER, "Binary sort selected");
             } else if (algorithmButtons.isSelected(radioButtonBubble.getModel())) {
                 sortManager = new SortManager("Bubble", random);
+                MyLogger.log(Level.FINER, "Bubble sort selected");
             } else if (algorithmButtons.isSelected(radioButtonMerge.getModel())) {
                 sortManager = new SortManager("Merge", random);
+                MyLogger.log(Level.FINER, "Merge sort selected");
             }
 
             sortManager.timedSort();
@@ -102,6 +113,5 @@ public class GUI implements ActionListener {
             timeTakenLabel.setText("was Sorted in: " + sortManager.getTime() + " nanoseconds to give ");
             sortedArrayLabel.setText(Arrays.toString(sortManager.getSortedArray()));
         }
-
     }
 }
