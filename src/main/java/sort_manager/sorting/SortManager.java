@@ -6,14 +6,21 @@ import java.util.logging.Level;
 
 public class SortManager {
     private String algorithm;
-    private int[] unsortedArray;
+    private final int[] UNSORTED_ARRAY;
     private int[] sortedArray;
     private long timeInNanoSecs;
     private Sorter sorter;
 
     public SortManager(String algorithm, int[] unsortedArray) {
         this.algorithm = algorithm;
-        this.unsortedArray = unsortedArray;
+        this.UNSORTED_ARRAY = unsortedArray;
+        sortedArray = new int[unsortedArray.length];
+        for (int i = 0; i < UNSORTED_ARRAY.length; i++) {
+            sortedArray[i] = UNSORTED_ARRAY[i];
+        }
+
+
+
         this.sortedArray = null;
 
         //Factory pattern from sorter
@@ -48,7 +55,7 @@ public class SortManager {
     }
 
     public int[] getUnsortedArray() {
-        return unsortedArray;
+        return UNSORTED_ARRAY;
     }
 
     public int[] getSortedArray() {
