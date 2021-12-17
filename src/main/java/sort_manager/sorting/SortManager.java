@@ -11,7 +11,6 @@ public class SortManager {
     private long timeInNanoSecs;
     private Sorter sorter;
 
-    //Constructor for SortManager
     public SortManager(String algorithm, int[] unsortedArray) {
         this.algorithm = algorithm;
         this.unsortedArray = unsortedArray;
